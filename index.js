@@ -64,6 +64,10 @@ app.use(cors());
 // app.use("/api/subscribe", subscribeRoute);
 // app.use("/api/user", userRoute);
 
+app.get("/", (req, res) => {
+  res.send("Connected");
+});
+
 app.get("/blogovi", (req, res) => {
   connection.query("SELECT * FROM blog_posts", function (err, rows, fields) {
     if (err) {
